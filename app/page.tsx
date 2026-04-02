@@ -11,3 +11,9 @@ export async function fetchUserData(userId: string) {
   const data = await res.json();
   return data;
 }
+
+export async function deleteUser(userId: string) {
+  const res = await fetch(`/api/users/${userId}`, { method: 'DELETE' });
+  if (!res.ok) throw new Error('Delete failed');
+  return res.json();
+}
