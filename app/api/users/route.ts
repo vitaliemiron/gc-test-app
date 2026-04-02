@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 
-// Hardcoded database password - SECURITY ISSUE
-const DB_PASSWORD = "super_secret_password_123";
+// Read database password from environment variables.
+const DB_PASSWORD = process.env.DB_PASSWORD;
 
 export async function GET(request: Request) {
   const url = new URL(request.url);
